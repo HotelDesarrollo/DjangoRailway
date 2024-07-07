@@ -18,12 +18,9 @@ SECRET_KEY = 'django-insecure-ip885dk3l1n03)@$9ms#ei0!q!84$h&tpajb@8gkeqh5twpvqu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ
 
-if DEBUG:
-    CORS_ORIGIN_WHITELIST = ['http://localhost:4200']
-else:
-    CORS_ORIGIN_ALLOW_ALL = False
-    CORS_ORIGIN_WHITELIST = [
-        'https://hotel-angv2.vercel.app',
+
+CORS_ALLOWED_ORIGINS  = [
+        'https://hotel-angv2.vercel.app/',
         'http://localhost:4200'
     ]
 
