@@ -27,11 +27,7 @@ else:
         'http://localhost:4200'
     ]
 
-ALLOWED_HOSTS = [
-                    'djangorailway-production.up.railway.app',
-                    'https://hotel-angv2.vercel.app',
-                    'http://localhost:4200'
-                ]
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS  = [
                             'http://*',
