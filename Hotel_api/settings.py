@@ -33,6 +33,11 @@ ALLOWED_HOSTS = [
                     'http://localhost:4200'
                 ]
 
+CSRF_TRUSTED_ORIGINS  = [
+                            'http://*',
+                            'https://djangorailway-production.up.railway.app'
+                        ]
+
 # Application definition
 
 INSTALLED_APPS = [
