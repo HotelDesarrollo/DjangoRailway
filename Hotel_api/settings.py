@@ -28,7 +28,7 @@ else:
     ]
 
 ALLOWED_HOSTS = [
-                    'https://djangorailway-production.up.railway.app/',
+                    'djangorailway-production.up.railway.app',
                     'https://hotel-angv2.vercel.app',
                     'http://localhost:4200'
                 ]
