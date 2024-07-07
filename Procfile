@@ -1,1 +1,1 @@
-web: gunicorn Hotel_api.wsgi
+web: daphne Hotel_api.asgi:application --port $PORT --bind 0.0.0.0 -v2
