@@ -16,9 +16,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ip885dk3l1n03)@$9ms#ei0!q!84$h&tpajb@8gkeqh5twpvqu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ
 
-ALLOWED_HOSTS = []
+if DEBUG:
+    CORS_ORIGIN_WHITELIST = ['http://localhost:4200']
+else:
+    CORS_ORIGIN_ALLOW_ALL = False
+    CORS_ORIGIN_WHITELIST = [
+        'https://hotel-angv2.vercel.app',
+        'http://localhost:4200'
+    ]
+
+ALLOWED_HOSTS = [
+                    'https://djangorailway-production.up.railway.app/',
+                    'https://hotel-angv2.vercel.app',
+                    'http://localhost:4200'
+                ]
 
 # Application definition
 
