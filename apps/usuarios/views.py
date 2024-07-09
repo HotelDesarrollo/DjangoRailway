@@ -60,7 +60,6 @@ class ListadoUsuario(APIView, ClassQuery):
                 'paginas_disponibles': paginas_disponibles,
                 'code': HTTPResponse.OK()
             })
-            #return Response(dict(data=serializer.data, code=HTTPResponse.OK()))
         except:
             response = 'Registros no encontrados'
             return Response(dict(data=[], detail=response, code=HTTPResponse.NOT_FOUND()))
@@ -150,26 +149,6 @@ class ListadoUsuariosPorGrupos(APIView, ClassQuery):
         print(grupo_permisos)
         return Response(dict(usuarios_segun_grupo=serializer.data, detail="not found"))
 
-# class UserLoginViewJWT(jwt_views.ObtainJSONWebToken):
-#     user_serializer_class = usuariosSerializer
-
-#     def post(self, request, *args, **kwargs):
-#         response = super().post(request, *args, **kwargs)
-
-#         if response.status_code == status.HTTP_200_OK:
-#             user = get_user_model().objects.get(
-#                 email=request.data[get_user_model().USERNAME_FIELD])
-#             serialized_user = self.user_serializer_class(user)
-#             response.data.update(serialized_user.data)
-#         return response
-
-# def jwt_response_payload_handler(token, user=None, request=None):
-#     grupos = gruposPermissionSerializer(user.groups,  many=True)
-#     grupos =grupos.data[0]['permissions']
-#     return {
-#         'token': token,
-#         'grupos': grupos
-#     }
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
