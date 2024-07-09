@@ -20,7 +20,7 @@ DEBUG = os.environ
 
 
 CORS_ALLOWED_ORIGINS  = [
-        'https://hotel-angv2.vercel.app/',
+        'https://hotel-angv2.vercel.app',
         'http://localhost:4200'
     ]
 
